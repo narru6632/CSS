@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector02.html</title>
+
+    <style>
+        /* 태그선택자를 통해 h1, input 태그 전체에 스타일 지정 */
+        h1{color: green;}
+        input{
+            color: blue; font-size: 20px; font-weight: bold; /*input < 입력값 색상을 blue로 설정*/
+        }
+        /*  
+            8. 속성 선택자 : 해당속성의 정의된 태그를 선택한다. 속성만 기술
+            하거나 속성과 속성값을 동시에 기술할 수 있다. 속성값 지정시 
+            "(더블), '(싱글)쿼테이션으로 감싸거나 생략할 수 있다.
+        */
+        /* hq 태그중 title속성이 있는 엘리먼트 선택 */
+        h1[title]{
+            border:1px solid red;
+        }
+        /* 속성과 속성값을 동시에 지정, 즉 input태그중 type이 text인 엘리먼트를 지정*/
+        input[type='text']{
+            color:red;
+        }
+        /* input 박스의 모든 테두리를 제거한 후 아래와 우측만 라인을 표시한다 */
+        input[type='tel']{
+            border: none;
+            border-bottom: 2px solid gray;
+            border-right: 5px solid purple;
+        }
+        /* 속성값 지정시 쿼테이션 없어도 된다 */
+        input[type=password]{
+            background-color: yellow;
+        }
+        /* 
+            9. 정규표현식 : 선택자 속성에 정규표현식을 사용할 수 있다.
+                * : 문자열이 포함되었을때
+                $ : 끝날 때
+                ^ : 시작될 때
+                = : 같을 때 선택한다
+        */
+        a[href*='da']{ /*'da'가 포함*/
+            color: #ff6699; font-size: 20px; font-weight: bold;
+        }
+        a[href$=com]{ /*com으로 끝남*/
+            border: 5px green dotted;
+        }
+        a[href^=http]{/*http로 시작*/
+            font-size: 30px;
+        }
+        a[href="www.nate.com"]{
+            background-color: yellow;
+        }
+
+        /*
+            10. 동위선택자 : 같은 수준의(depth)의 태그 혹은 바로 아래의 태그를 선택한다
+            ~ : 같은 수준의 태그 전체를 선택
+            + : 같은 수준의 태그중 다음 하나만 선택한다
+        */
+        /* h2와 동시에 있는 모든 div태그를 선택한다 */
+        h2~div{
+            color: blue;
+        }
+        /* h2와 동시에 있는 div태그 중 첫번째만 선택한다
+        즉 div1만 선택해서 빨간색을 적용한다 */
+        h2+div{
+            color: red; font-weight: bold; background-color: green;
+        }
+    </style>
+
+
+</head>
+<body>
+        <h1>title속성이 없는 h1태그</h1>
+        <h1 title = "제목태그입니다">title속성이 있는 h1태그</h1>
+
+        <form action="">
+            이름 : <input type="text" /> <br />
+            아이디 : <input type="text" /> <br />
+            비밀번호 : <input type="password" /> <br />
+            전화번호 <input type="tel" /> <br />
+        </form>
+        
+        <h2>정규표현식으로 사용한 선택자</h2>
+        <a href="http://www.naver.com">난 네이버다</a>
+        <br />
+        <a href="http://www.daum/net">난 다음이다</a>
+        <br />
+        <a href="www.nate.com">난 네이트다</a>
+
+        <h2 id="title">동위(~,+) 선택자</h2>
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+        <div>div4</div>
+        <div>div5</div>
+</body>
+</html>

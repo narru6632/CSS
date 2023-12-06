@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C06Background.html</title>
+    <style>
+        #back1 div{
+            /* 가로크기는 상대크기로 지정한다. 따라서 웹브라우저의 
+            크기에 따라 가변적으로 변한다 */
+            width:80%; height:250px;
+        }
+            /* back1하위의 첫번째 항목은 배경이미지와 반복여부를 지정하고 
+            테두리를 빨간색으로 표현한다*/
+        #back1 div:first-child{
+            /* 배경이미지 설정. url에 이미지경로를 기술한다 */
+            border: 1px solid red;
+            /* 배경의 반복속성으로 > 전체방향으로 반복한다 */
+            background-image: url('./images/3.png');
+            background-repeat: repeat;
+        }
+        /* 
+            repeat-x : 가로방향(x축)으로 반복
+            repeat-y : 세로방향(y축)으로 반복
+            repeat : 가로, 세로 전체 방향으로 반복한다
+            no-repeat : 반복하지않는, 딱 한번만 표시
+        */
+        #back1 div:last-child{
+            background-image:url('./images/back.png');
+            background-repeat: repeat-y;
+            border: 1px solid blue;
+        }
+        #back2{
+            /* 배경이미지 경로 지정 */
+            background-image: url('./images/apple.png');
+            /* 반복 여부 지정 */
+            background-repeat: no-repeat;
+            /* 배경이미지의 시작 위치 : 좌측위치, 상단위치*/
+            background-position: 20px 30px;
+            background-color: yellow;
+            width: 400px; height: 250px;
+        }
+        /* 
+            4가지 속성을 한꺼번에 부여할때 사용한다.
+            순서는 상관없이 띄어쓰기만 잘해주면 적용된다
+        */
+        #back3{
+            background:url("./images/banana.png") 20px 40px green repeat-x;
+            width: 400px; height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <h2>배경관련 CSS 속성</h2>
+
+    <div>
+        <h3>배경색 지정</h3>
+        <div style="background-color: #FF0000;">
+            블럭엘리먼트
+        </div>
+        <span style="background-color: #00FF00;">
+            인라인엘리먼트 <br /> 인라인엘리먼트
+        </span>
+    </div>
+    
+    <div id="back1">
+        <div>안녕하세요? 저는 뚱이입니다.</div>
+        <div>반가워요~</div>
+    </div>
+
+    <div id="back2">
+        div태그는 Division의 줄임말입니다
+    </div>
+
+    <div id="back3">
+        background속성을 동시에 사용하기
+    </div>
+    
+</body>
+</html>
