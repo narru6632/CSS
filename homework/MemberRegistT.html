@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MemberRegistT.html</title>
+<style>
+    *{font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 12px;}
+    .c_imp{color:red;}
+    .userTable{width:700px; border: none; 
+        border-collapse: collapse;}
+    .userTable td{border:1px solid black;padding: 5px;}
+    .userTable td.userTit{background-color: #e4e6e9;
+        font-weight: bold;}
+    input, select, button {border: 1px solid #afafaf;}
+    .userInput{padding: 3px 2px;}
+    .btn_basic{background-color: #3d3d3d;color: #ffffff;
+        height: 23px;width: 70px;}
+    .btn_basic:hover{background-color: #dddddd;
+        color: #afafaf;}
+</style>
+</head>
+<body>
+    <h2>회원가입폼 만들기</h2>
+
+    <table class="userTable">
+        <!-- 테이블의 사이즈 지정 -->
+        <colgroup>
+            <col width="20%">
+            <col width="80%">
+        </colgroup>
+        <!-- 회원가입폼에 필요한 항목 출력 -->
+        <tr>
+            <td class="userTit"><span class="c_imp">*</span>
+                아이디</td>
+            <td class="userVal">
+<input type="text" class="userInput" style="width: 120px">        
+<button type="button" class="btn_basic">중복확인</button>        
+            </td>
+        </tr>
+        <tr>
+            <td class="userTit"><span class="c_imp">*</span>
+                비밀번호</td>
+            <td class="userVal">
+<input type="text" class="userInput" style="width: 90px">                
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="3" class="userTit">주소</td>
+            <td class="userVal">
+<input type="text" class="userInput" style="width: 60px">                
+            </td>
+        </tr>
+        <tr>
+            <td class="userVal">
+<input type="text" class="userInput" style="width: 95%">                
+            </td>
+        </tr>
+        <tr>
+            <td class="userVal">
+<input type="text" class="userInput" style="width: 95%">                
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>
